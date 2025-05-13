@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ÉcoVie - Protégeons notre planète</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { primary: "#27ae60", secondary: "#3498db" },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
+    <style>
+      :where([class^="ri-"])::before { content: "\f3c2"; }
+      body {
+      font-family: 'Inter', sans-serif;
+      padding-bottom: 60px;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50">
+    <!-- Nav Bar -->
+    <nav class="fixed top-0 w-full bg-white shadow-sm z-50">
+      <div class="flex justify-between items-center p-4">
+        <div class="flex items-center">
+          <i class="ri-leaf-line text-primary mr-2"></i>
+          <span class="font-['Pacifico'] text-primary text-xl">ÉcoVie</span>
+        </div>
+        <div class="flex items-center">
+          <div class="relative mr-2">
+            <!--span
+              class="absolute top-0 right-0 bg-primary text-white text-xs rounded-full h-5 w-5 flex items-center justify-center"
+              >2</span
+          -->
+            <button
+              class="w-10 h-10 flex items-center justify-center text-gray-600"
+            >
+              <i class="ri-notification-3-line ri-lg"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- Main Content -->
+    <div class="mt-16 pb-16">
+      <!-- Hero Section -->
+      <div class="relative h-48 bg-primary overflow-hidden">
+        <div id="heroCarousel" class="w-full h-full">
+          <img
+            src="Images/"
+            alt="Forêt"
+            class="w-full h-full object-cover object-top opacity-60 transition-opacity duration-500"
+          />
+          <img
+            src=""
+            alt="Énergie verte"
+            class="absolute inset-0 w-full h-full object-cover object-top opacity-0 transition-opacity duration-500"
+          />
+          <img
+            src=""
+            alt="Océan"
+            class="absolute inset-0 w-full h-full object-cover object-top opacity-0 transition-opacity duration-500"
+          />
+        </div>
+        <div
+          class="absolute inset-0 flex flex-col justify-center px-6 text-white"
+        >
+          <h1 class="text-2xl font-bold mb-1">Protégeons notre planète</h1>
+          <p class="text-sm mb-4">
+            Ensemble pour un avenir plus vert et durable
+          </p>
+          <button
+            class="bg-white text-primary font-medium py-2 px-4 w-40 !rounded-button shadow-md cursor-pointer"
+          >
+            Agir maintenant
+          </button>
+        </div>
+      </div>
+      <!-- Stats Section -->
+      <div class="px-4 py-5">
+        <div class="grid grid-cols-3 gap-3">
+          <div class="flex flex-col items-center">
+            <div
+              class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-2"
+            >
+              <i class="ri-plant-line ri-lg text-primary"></i>
+            </div>
+            <span class="font-bold text-sm">12M</span>
+            <span class="text-xs text-gray-600">Arbres plantés</span>
+          </div>
+          <div class="flex flex-col items-center">
+            <div
+              class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-2"
+            >
+              <i class="ri-drop-line ri-lg text-blue-500"></i>
+            </div>
+            <span class="font-bold text-sm">45K</span>
+            <span class="text-xs text-gray-600">Litres économisés</span>
+          </div>
+          <div class="flex flex-col items-center">
+            <div
+              class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mb-2"
+            >
+              <i class="ri-sun-line ri-lg text-yellow-500"></i>
+            </div>
+            <span class="font-bold text-sm">8.2M</span>
+            <span class="text-xs text-gray-600">kWh solaires</span>
+          </div>
+        </div>
+      </div>
+      <!-- Actions Section -->
+      <div class="px-4 py-3">
+        <h2 class="text-lg font-semibold mb-4">Agir pour l'environnement</h2>
+        <div class="grid grid-cols-4 gap-3">
+          <div class="flex flex-col items-center">
+            <div
+              class="w-14 h-14 rounded-full flex items-center justify-center mb-1 overflow-hidden"
+            >
+              <img
+                src=""
+                alt="Recyclage"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <span
+              class="text-xs text-gray-800 whitespace-nowrap overflow-hidden text-overflow-ellipsis"
+              >Recyclage</span
+            >
+          </div>
+          <div class="flex flex-col items-center">
+            <div
+              class="w-14 h-14 rounded-full flex items-center justify-center mb-1 overflow-hidden"
+            >
+              <img
+                src=""
+                alt="Économie d'eau"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <span
+              class="text-xs text-gray-800 whitespace-nowrap overflow-hidden text-overflow-ellipsis"
+              >Économie d'eau</span
+            >
+          </div>
+          <div class="flex flex-col items-center">
+            <div
+              class="w-14 h-14 rounded-full flex items-center justify-center mb-1 overflow-hidden"
+            >
+              <img
+                src=""
+                alt="Énergie"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <span
+              class="text-xs text-gray-800 whitespace-nowrap overflow-hidden text-overflow-ellipsis"
+              >Énergie</span
+            >
+          </div>
+          <div class="flex flex-col items-center">
+            <div
+              class="w-14 h-14 rounded-full flex items-center justify-center mb-1 overflow-hidden"
+            >
+              <img
+                src=""
+                alt="Jardinage"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <span
+              class="text-xs text-gray-800 whitespace-nowrap overflow-hidden text-overflow-ellipsis"
+              >Jardinage</span
+            >
+          </div>
+        </div>
+      </div>
+      <!-- Ecological Actions -->
+      <div class="px-4 py-3">
+        <div class="flex justify-between items-center mb-4">
+          <h2 class="text-lg font-semibold">Actions écologiques</h2>
+          <a href="#" class="text-primary text-sm font-medium">Voir tout</a>
+        </div>
+        <div class="bg-white rounded-lg shadow-sm overflow-hidden mb-4">
+          <div class="flex">
+            <div class="w-24 h-24 overflow-hidden">
+              <img
+                src=""
+                alt="Jardin communautaire"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="p-3 flex-1">
+              <h3 class="font-medium text-sm">Jardin communautaire</h3>
+              <p class="text-xs text-gray-600 mb-2">
+                Participez à notre projet de jardinage urbain ce weekend
+              </p>
+              <div class="flex items-center">
+                <div class="flex -space-x-2">
+                  <div
+                    class="w-6 h-6 rounded-full bg-blue-500 flex items-center justify-center text-white text-xs"
+                  >
+                    <i class="ri-user-line"></i>
+                  </div>
+                  <div
+                    class="w-6 h-6 rounded-full bg-green-500 flex items-center justify-center text-white text-xs"
+                  >
+                    <i class="ri-user-line"></i>
+                  </div>
+                  <div
+                    class="w-6 h-6 rounded-full bg-yellow-500 flex items-center justify-center text-white text-xs"
+                  >
+                    <i class="ri-user-line"></i>
+                  </div>
+                </div>
+                <span class="text-xs text-gray-500 ml-2">+18 participants</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bg-white rounded-lg shadow-sm overflow-hidden mb-4">
+          <div class="flex">
+            <div class="w-24 h-24 overflow-hidden">
+              <img
+                src=""
+                alt="Nettoyage de plage"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="p-3 flex-1">
+              <h3 class="font-medium text-sm">Nettoyage de plage</h3>
+              <p class="text-xs text-gray-600 mb-2">
+                Rejoignez-nous pour nettoyer la plage de Saint-Michel le 18 mai
+              </p>
+              <div class="flex items-center">
+                <div class="flex -space-x-2">
+                  <div
+                    class="w-6 h-6 rounded-full bg-purple-500 flex items-center justify-center text-white text-xs"
+                  >
+                    <i class="ri-user-line"></i>
+                  </div>
+                  <div
+                    class="w-6 h-6 rounded-full bg-red-500 flex items-center justify-center text-white text-xs"
+                  >
+                    <i class="ri-user-line"></i>
+                  </div>
+                </div>
+                <span class="text-xs text-gray-500 ml-2">+24 participants</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Eco Tips -->
+      <div class="px-4 py-3">
+        <h2 class="text-lg font-semibold mb-4">Conseils écologiques</h2>
+        <div class="bg-white rounded-lg shadow-sm p-4 mb-4">
+          <div class="flex items-start">
+            <div
+              class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mr-3"
+            >
+              <i class="ri-lightbulb-line text-primary"></i>
+            </div>
+            <div>
+              <h3 class="font-medium text-sm mb-1">Économisez l'énergie</h3>
+              <p class="text-xs text-gray-600">
+                Éteignez les appareils électroniques plutôt que de les laisser
+                en veille. Cela peut réduire votre consommation d'énergie
+                jusqu'à 10%.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="bg-white rounded-lg shadow-sm p-4 mb-4">
+          <div class="flex items-start">
+            <div
+              class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-3"
+            >
+              <i class="ri-drop-line text-blue-500"></i>
+            </div>
+            <div>
+              <h3 class="font-medium text-sm mb-1">Préservez l'eau</h3>
+              <p class="text-xs text-gray-600">
+                Prenez des douches plus courtes et installez des économiseurs
+                d'eau sur vos robinets pour réduire votre consommation
+                quotidienne.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Impact Chart -->
+      <div class="px-4 py-3">
+        <h2 class="text-lg font-semibold mb-4">Notre impact collectif</h2>
+        <div class="bg-white rounded-lg shadow-sm p-4">
+          <div id="impactChart" class="w-full h-64"></div>
+        </div>
+      </div>
+      <!-- Upcoming Events -->
+      <div class="px-4 py-3">
+        <h2 class="text-lg font-semibold mb-4">Événements à venir</h2>
+        <div class="bg-white rounded-lg shadow-sm p-4 mb-4">
+          <div class="flex items-center mb-3">
+            <div
+              class="w-12 h-12 bg-primary bg-opacity-10 rounded-lg flex items-center justify-center mr-3"
+            >
+              <span class="text-primary font-medium">15</span>
+              <span class="text-primary text-xs">Mai</span>
+            </div>
+            <div>
+              <h3 class="font-medium text-sm">Atelier compostage</h3>
+              <p class="text-xs text-gray-600">
+                Centre culturel, Paris 14:00 - 16:00
+              </p>
+            </div>
+          </div>
+          <button
+            class="bg-primary bg-opacity-10 text-primary text-xs font-medium py-1.5 px-3 !rounded-button cursor-pointer"
+          >
+            S'inscrire
+          </button>
+        </div>
+        <div class="bg-white rounded-lg shadow-sm p-4 mb-4">
+          <div class="flex items-center mb-3">
+            <div
+              class="w-12 h-12 bg-primary bg-opacity-10 rounded-lg flex items-center justify-center mr-3"
+            >
+              <span class="text-primary font-medium">22</span>
+              <span class="text-primary text-xs">Mai</span>
+            </div>
+            <div>
+              <h3 class="font-medium text-sm">Conférence biodiversité</h3>
+              <p class="text-xs text-gray-600">
+                Université Lyon 2, 18:30 - 20:30
+              </p>
+            </div>
+          </div>
+          <button
+            class="bg-primary bg-opacity-10 text-primary text-xs font-medium py-1.5 px-3 !rounded-button cursor-pointer"
+          >
+            S'inscrire
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- FAB Button -->
+    <div class="fixed bottom-20 right-4 z-40">
+      <button
+        class="w-14 h-14 bg-primary rounded-full shadow-lg flex items-center justify-center text-white cursor-pointer"
+      >
+        <i class="ri-add-fill ri-xl"></i>
+      </button>
+    </div>
+    <!-- Tab Bar -->
+    <div
+      class="fixed bottom-0 w-full bg-white shadow-lg border-t border-gray-100 z-50"
+    >
+      <div class="grid grid-cols-4 h-14">
+        <a
+          href="#"
+          class="flex flex-col items-center justify-center text-primary"
+        >
+          <div class="w-6 h-6 flex items-center justify-center">
+            <i class="ri-home-4-fill ri-lg"></i>
+          </div>
+          <span class="text-xs mt-0.5">Accueil</span>
+        </a>
+        <a
+          href="#"
+          class="flex flex-col items-center justify-center text-gray-500"
+        >
+          <div class="w-6 h-6 flex items-center justify-center">
+            <i class="ri-leaf-line ri-lg"></i>
+          </div>
+          <span class="text-xs mt-0.5">Solutions</span>
+        </a>
+        <a
+          href="#"
+          class="flex flex-col items-center justify-center text-gray-500"
+        >
+          <div class="w-6 h-6 flex items-center justify-center">
+            <i class="ri-earth-line ri-lg"></i>
+          </div>
+          <span class="text-xs mt-0.5">Agir</span>
+        </a>
+        <a
+          href="#"
+          class="flex flex-col items-center justify-center text-gray-500"
+        >
+          <div class="w-6 h-6 flex items-center justify-center">
+            <i class="ri-user-line ri-lg"></i>
+          </div>
+          <span class="text-xs mt-0.5">Profil</span>
+        </a>
+      </div>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const heroCarousel = document.getElementById("heroCarousel");
+        const images = heroCarousel.getElementsByTagName("img");
+        let currentImageIndex = 0;
+        function showNextImage() {
+          images[currentImageIndex].classList.remove("opacity-60");
+          images[currentImageIndex].classList.add("opacity-0");
+
+          currentImageIndex = (currentImageIndex + 1) % images.length;
+
+          images[currentImageIndex].classList.remove("opacity-0");
+          images[currentImageIndex].classList.add("opacity-60");
+        }
+        setInterval(showNextImage, 30000);
+        // Chart initialization
+        const chartDom = document.getElementById("impactChart");
+        const myChart = echarts.init(chartDom);
+        const option = {
+          tooltip: {
+            trigger: "axis",
+            axisPointer: {
+              type: "shadow",
+            },
+          },
+          legend: {
+            data: ["Arbres plantés", "CO₂ économisé (tonnes)"],
+          },
+          grid: {
+            left: "3%",
+            right: "4%",
+            bottom: "3%",
+            containLabel: true,
+          },
+          xAxis: [
+            {
+              type: "category",
+              data: ["Jan", "Fév", "Mar", "Avr", "Mai"],
+            },
+          ],
+          yAxis: [
+            {
+              type: "value",
+            },
+          ],
+          series: [
+            {
+              name: "Arbres plantés",
+              type: "bar",
+              stack: "Ad",
+              emphasis: {
+                focus: "series",
+              },
+              data: [1200, 1800, 2500, 3200, 3800],
+              color: "#27ae60",
+            },
+            {
+              name: "CO₂ économisé (tonnes)",
+              type: "bar",
+              stack: "Ad",
+              emphasis: {
+                focus: "series",
+              },
+              data: [320, 480, 650, 830, 950],
+              color: "#3498db",
+            },
+          ],
+        };
+        myChart.setOption(option);
+        // Resize chart when window is resized
+        window.addEventListener("resize", function () {
+          myChart.resize();
+        });
+      });
+    </script>
+  </body>
+</html>
