@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ÉcoVie - Protégeons notre planète</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#27ae60",
+              secondary: "#3498db"
+            },
+            borderRadius: {
+              button: "8px"
+            }
+          }
+        }
+      };
+    </script>
+
+    
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" />
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
+
+    
+    <link rel="stylesheet" href="style.css" />
+
+    
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <nav class="fixed top-0 w-full bg-white shadow-sm z-50">
+      <div class="flex justify-between items-center p-4">
+        <div class="flex items-center">
+          <span class="font-['Pacifico'] text-primary text-xl">ÉcoVie</span>
+        </div>
+      </div>
+    </nav>
+
+
+
+   <!-- bottom main -->
+    <div
+      class="fixed bottom-0 w-full bg-white shadow-lg border-t border-gray-100 z-50"
+    >
+      <div class="grid grid-cols-4 h-14">
+        <a
+          href="test_projet.html"
+          class="flex flex-col items-center justify-center text-primary"
+        >
+          <div class="w-6 h-6 flex items-center justify-center">
+            <i class="ri-home-4-fill ri-lg"></i>
+          </div>
+          <span class="text-xs mt-0.5">Accueil</span>
+        </a>
+        <a
+          href="#"
+          class="flex flex-col items-center justify-center text-gray-500"
+        >
+          <div class="w-6 h-6 flex items-center justify-center">
+            <i class="ri-leaf-line ri-lg"></i>
+          </div>
+          <span class="text-xs mt-0.5">Solutions</span>
+        </a>
+        <a
+          href="https://www.wwf.fr/sengager-ensemble/votre-don-est-notre-force"
+          class="flex flex-col items-center justify-center text-gray-500"
+        >
+          <div class="w-6 h-6 flex items-center justify-center">
+            <i class="ri-earth-line ri-lg"></i>
+          </div>
+          <span class="text-xs mt-0.5">Agir</span>
+        </a>
+        <a
+          href="team.html"
+          class="flex flex-col items-center justify-center text-gray-500"
+        >
+          <div class="w-6 h-6 flex items-center justify-center">
+            <i class="ri-team-line ri-lg"></i>
+          </div>
+          <span class="text-xs mt-0.5">Qui sommes nous ?</span>
+        </a>
+      </div>
+    </div>
+  </body>
