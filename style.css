@@ -1,5 +1,0 @@
-:where([class^="ri-"])::before { content: "\f3c2"; }
-      body {
-      font-family: 'Inter', sans-serif;
-      padding-bottom: 60px;
-      }
