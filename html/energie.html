@@ -5,17 +5,19 @@
         <meta charset="UTF-8"> <!-- Encodage UTF-8 -->
         <link rel="stylesheet" href="../css/style.css">
         <script src="../js/script.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
     </head><!-- Fin de la balise d'entête -->        
 
     <body>
         <header>
             <div class="navbar-left">
                 <img src="../image/terreGIF.gif" alt="Terre tournante" class="earth-icon">
-                <!--<i class ="ri -leaf-line text-primary" ></i>-->
+              
                 <h1 class="site-title">Écovie</h1>
             </div>
             <section>
-                <!--<h2>Galerie : Énergies renouvelables</h2>-->
+              
                 <div class="carousel">
                     <img src="../image/energie1.jpg" class="slide active" alt="Éolienne">
                     <img src="../image/energie2.jpg" class="slide" alt="Panneaux solaires">
@@ -79,27 +81,31 @@
 
           <h3> Questionnaire résumé</h3>
 
-          <form class="questionnaire-form">
+          <button id="start-btn">Tester mes connaissances</button>
+
+          <form class="questionnaire-form hidden" id="quiz">
  
+            
             <fieldset>
               <legend>1. Quelle est une source d'énergie renouvelable ?</legend>
-              <label><input type="checkbox" name="q1"> a) Le charbon</label><br>
-              <label><input type="checkbox" name="q1"> b) Le vent</label><br>
-              <label><input type="checkbox" name="q1"> c) Le pétrole</label>
+              <label><input type="radio" name="q1" value="a"> a) Le charbon</label><br>
+              <label><input type="radio" name="q1" value="b"> b) Le vent</label><br>
+              <label><input type="radio" name="q1" value="c"> c) Le pétrole</label>
             </fieldset>
+
 
             <fieldset>
               <legend>2. Quelle action permet d'économiser de l'énergie ?</legend>
-              <label><input type="checkbox" name="q2"> a) Laisser la télé allumée toute la nuit</label><br>
-              <label><input type="checkbox" name="q2"> b) Éteindre les appareils inutilisés</label><br>
-              <label><input type="checkbox" name="q2"> c) Chauffer sa maison à 25°C en hiver</label>
+              <label><input type="radio" name="q2" value="a"> a) Laisser la télé allumée toute la nuit</label><br>
+              <label><input type="radio" name="q2" value="b"> b) Éteindre les appareils inutilisés</label><br>
+              <label><input type="radio" name="q2" value="c"> c) Chauffer sa maison à 25°C en hiver</label>
             </fieldset>
 
             <fieldset>
               <legend>3. Pourquoi faut-il utiliser moins d'énergie polluante ?</legend>
-              <label><input type="checkbox" name="q3"> a) Pour économiser de l'argent uniquement</label><br>
-              <label><input type="checkbox" name="q3"> b) Pour polluer davantage</label><br>
-              <label><input type="checkbox" name="q3"> c) Pour protéger la planète</label>
+              <label><input type="radio" name="q3" value="a"> a) Pour économiser de l'argent uniquement</label><br>
+              <label><input type="radio" name="q3" value="b"> b) Pour polluer davantage</label><br>
+              <label><input type="radio" name="q3" value="c"> c) Pour protéger la planète</label>
             </fieldset>
 
             <fieldset>
@@ -113,12 +119,18 @@
               <textarea name="q5" rows="3" style="width: 100%;" placeholder="Écris ta réponse ici..."></textarea>
             </fieldset>
 
-            <button type="submit">Valider</button>
+            <button type="submit" id="valid-btn">Valider</button>
+          
           </form>
+          <div id="result"></div>
+          <canvas id="confetti-canvas"></canvas>
+
 
         </section>
         <footer>
-            <a href="https://www.ecologie.gouv.fr/energie">En savoir plus ?</a>       
+            <p>©️2025 Joss DOUNIAMA OKANA & Farida BEDEWY.</p>
+            <p>Tous droits réservés.</p>
+            <a href="https://www.ecologie.gouv.fr/">En savoir plus ?</a>       
         </footer>
     </body>
 </html>
