@@ -380,3 +380,65 @@ section:hover {
   background-color: #66bb6a;
  
 }
+
+/* ================= Questionnnaire ========================================= */
+#start-btn {
+  display: block;
+  margin: 20px auto;
+  padding: 12px 24px;
+  background-color: #81c784;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#start-btn:hover {
+  background-color: #66bb6a;
+}
+
+
+#valid-btn {
+  display: block;
+  margin: 20px auto 0 auto;
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#valid-btn:hover {
+  background-color: #388e3c;
+}
+
+/* Zone du score et du message final */
+#result {
+  margin-top: 30px;
+  font-size: 20px;
+  color: #2e7d32;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Canvas des confettis : plein écran */
+#confetti-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+.hidden {
+  display: none;
+}
