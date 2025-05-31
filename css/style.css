@@ -442,3 +442,11 @@ section:hover {
 .hidden {
   display: none;
 }
+
+/* ============================ photo =================== */
+
+.photo {
+  width: 150px;
+  height: 150px;  
+}
+

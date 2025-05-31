@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const validBtn = document.getElementById("valid-btn");
   const resultDiv = document.getElementById("result");
 
-  startBtn.addEventListener("click", () => {
+    startBtn.addEventListener("click", () => {
     
     quiz.classList.remove("hidden");
     startBtn.classList.add("hidden");
