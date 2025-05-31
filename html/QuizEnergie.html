@@ -1,8 +1,36 @@
 <!DOCTYPE html> <!-- Version 5 de HTML-->
 <html lang="fr"> <!-- Précision de la langue pour le navigateur-->
     <head> <!-- Entête du document HTML -->
-        <title>Écovie - Quiz énergie</title> <!-- Titre de la page -->
+        <title>Écovie Quiz </title> <!-- Titre de la page -->
         <meta charset="UTF-8"> <!-- Encodage UTF-8 -->
         <link rel="stylesheet" href="../css/style.css">
         <script src="../js/script.js"></script>
-    </head><!-- Fin de la balise d'entête -->   
+    </head><!-- Fin de la balise d'entête -->        
+
+    <body>
+        <header>
+            <div class="navbar-left">
+                <img src="../image/terreGIF.gif" alt="Terre tournante" class="earth-icon">
+                <!--<i class ="ri -leaf-line text-primary" ></i>-->
+                <h1 class="site-title">Écovie</h1>
+            </div>
+            <section>
+                <!--<h2>Galerie : Énergies renouvelables</h2>-->
+                <div class="carousel">
+                    <img src="../image/energie1.jpg" class="slide active" alt="Éolienne">
+                    <img src="../image/energie2.jpg" class="slide" alt="Panneaux solaires">
+                    <img src="../image/energie3.jpg" class="slide" alt="Hydroélectricité">
+                    <img src="../image/energie4.jpg" class="slide" alt="Hydroélectricité">
+
+                    <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+                    <button class="next" onclick="changeSlide(1)">&#10095;</button>
+                </div>
+            </section> 
+            
+            <nav>
+                <a href="../html/Accueil_Ecovie.html">Accueil</a>
+                <a href="../html/energie.html">Énergies Renouvelables</a>
+                <a href="../html/QuizEnergie.html">Quiz Énergie</a>
+                <a href="../html/credit.html">Crédits</a>
+            </nav>
+        </header>
