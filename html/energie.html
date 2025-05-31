@@ -1,93 +1,124 @@
-<!DOCTYPE html>
-<html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ÉcoVie - Protégeons notre planète</title>
+<!DOCTYPE html> <!-- Version 5 de HTML-->
+<html lang="fr"> <!-- Précision de la langue pour le navigateur-->
+    <head> <!-- Entête du document HTML -->
+        <title>Écovie - Accueil</title> <!-- Titre de la page -->
+        <meta charset="UTF-8"> <!-- Encodage UTF-8 -->
+        <link rel="stylesheet" href="../css/style.css">
+        <script src="../js/script.js"></script>
+    </head><!-- Fin de la balise d'entête -->        
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              primary: "#27ae60",
-              secondary: "#3498db"
-            },
-            borderRadius: {
-              button: "8px"
-            }
-          }
-        }
-      };
-    </script>
+    <body>
+        <header>
+            <div class="navbar-left">
+                <img src="../image/terreGIF.gif" alt="Terre tournante" class="earth-icon">
+                <!--<i class ="ri -leaf-line text-primary" ></i>-->
+                <h1 class="site-title">Écovie</h1>
+            </div>
+            <section>
+                <!--<h2>Galerie : Énergies renouvelables</h2>-->
+                <div class="carousel">
+                    <img src="../image/energie1.jpg" class="slide active" alt="Éolienne">
+                    <img src="../image/energie2.jpg" class="slide" alt="Panneaux solaires">
+                    <img src="../image/energie3.jpg" class="slide" alt="Hydroélectricité">
+                    <img src="../image/energie4.jpg" class="slide" alt="Hydroélectricité">
 
-    
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" />
+                    <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+                    <button class="next" onclick="changeSlide(1)">&#10095;</button>
+                </div>
+            </section> 
+            
+            <nav>
+                <a href="../html/Accueil_Ecovie.html">Accueil</a>
+                <a href="../html/energie.html">Énergies Renouvelables</a>
+                <a href="../html/QuizEnergie.html">Quiz Énergie</a>
+                <a href="../html/credit.html">Crédits</a>
+            </nav>
+        </header>
 
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
+        <section class="energie-section">
+          <h2>Pourquoi économiser l'énergie ?</h2>
+          <p class="intro-energie">
+            L'énergie est essentielle pour faire fonctionner nos maisons, nos transports et nos industries.
+            Mais une grande partie de cette énergie vient encore de sources polluantes comme le pétrole ou le charbon.
+            Pour protéger notre planète, il est important d'économiser l'énergie et d'utiliser des sources renouvelables,
+            comme le soleil ou le vent. Chacun peut agir : éteindre les appareils inutilisés, utiliser des ampoules LED,
+            ou encore privilégier les transports en commun.
+          </p>
 
-    
-    <link rel="stylesheet" href="style.css" />
+          <h3> Bonnes pratiques pour une énergie plus écologique</h3>
+          <table class="energie-table">
+            <thead>
+              <tr>
+                <th>Geste écologique</th>
+                <th>Impact positif</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Éteindre les lumières inutiles</td>
+                <td>Réduit la consommation d'électricité</td>
+              </tr>
+              <tr>
+                <td>Utiliser des ampoules LED</td>
+                <td>Consomme moins d'énergie que les classiques</td>
+              </tr>
+              <tr>
+                <td>Choisir les transports en commun</td>
+                <td>Diminue les émissions de CO₂</td>
+              </tr>
+              <tr>
+                <td>Chauffer modérément son logement</td>
+                <td>Moins de gaz ou d'électricité utilisée</td>
+              </tr>
+              <tr>
+                <td>Installer des panneaux solaires</td>
+                <td>Utilise une source d'énergie renouvelable</td>
+              </tr>
+            </tbody>
+          </table>
 
-    
-    <script src="script.js"></script>
-  </head>
-  <body>
-    <nav class="fixed top-0 w-full bg-white shadow-sm z-50">
-      <div class="flex justify-between items-center p-4">
-        <div class="flex items-center">
-          <span class="font-['Pacifico'] text-primary text-xl">ÉcoVie</span>
-        </div>
-      </div>
-    </nav>
+          <h3> Questionnaire résumé</h3>
 
+          <form class="questionnaire-form">
+ 
+            <fieldset>
+              <legend>1. Quelle est une source d'énergie renouvelable ?</legend>
+              <label><input type="checkbox" name="q1"> a) Le charbon</label><br>
+              <label><input type="checkbox" name="q1"> b) Le vent</label><br>
+              <label><input type="checkbox" name="q1"> c) Le pétrole</label>
+            </fieldset>
 
+            <fieldset>
+              <legend>2. Quelle action permet d'économiser de l'énergie ?</legend>
+              <label><input type="checkbox" name="q2"> a) Laisser la télé allumée toute la nuit</label><br>
+              <label><input type="checkbox" name="q2"> b) Éteindre les appareils inutilisés</label><br>
+              <label><input type="checkbox" name="q2"> c) Chauffer sa maison à 25°C en hiver</label>
+            </fieldset>
 
-   <!-- bottom main -->
-    <div
-      class="fixed bottom-0 w-full bg-white shadow-lg border-t border-gray-100 z-50"
-    >
-      <div class="grid grid-cols-4 h-14">
-        <a
-          href="test_projet.html"
-          class="flex flex-col items-center justify-center text-primary"
-        >
-          <div class="w-6 h-6 flex items-center justify-center">
-            <i class="ri-home-4-fill ri-lg"></i>
-          </div>
-          <span class="text-xs mt-0.5">Accueil</span>
-        </a>
-        <a
-          href="#"
-          class="flex flex-col items-center justify-center text-gray-500"
-        >
-          <div class="w-6 h-6 flex items-center justify-center">
-            <i class="ri-leaf-line ri-lg"></i>
-          </div>
-          <span class="text-xs mt-0.5">Solutions</span>
-        </a>
-        <a
-          href="https://www.wwf.fr/sengager-ensemble/votre-don-est-notre-force"
-          class="flex flex-col items-center justify-center text-gray-500"
-        >
-          <div class="w-6 h-6 flex items-center justify-center">
-            <i class="ri-earth-line ri-lg"></i>
-          </div>
-          <span class="text-xs mt-0.5">Agir</span>
-        </a>
-        <a
-          href="team.html"
-          class="flex flex-col items-center justify-center text-gray-500"
-        >
-          <div class="w-6 h-6 flex items-center justify-center">
-            <i class="ri-team-line ri-lg"></i>
-          </div>
-          <span class="text-xs mt-0.5">Qui sommes nous ?</span>
-        </a>
-      </div>
-    </div>
-  </body>
+            <fieldset>
+              <legend>3. Pourquoi faut-il utiliser moins d'énergie polluante ?</legend>
+              <label><input type="checkbox" name="q3"> a) Pour économiser de l'argent uniquement</label><br>
+              <label><input type="checkbox" name="q3"> b) Pour polluer davantage</label><br>
+              <label><input type="checkbox" name="q3"> c) Pour protéger la planète</label>
+            </fieldset>
+
+            <fieldset>
+              <legend>4. Donne un exemple de geste simple pour économiser de l'énergie à la maison :</legend>
+              <input type="text" name="q4" placeholder="Exemple : éteindre la lumière en sortant" style="width: 100%;">
+            </fieldset>
+
+            
+            <fieldset>
+              <legend>5. Pourquoi est-il utile de se tourner vers des énergies renouvelables ?</legend>
+              <textarea name="q5" rows="3" style="width: 100%;" placeholder="Écris ta réponse ici..."></textarea>
+            </fieldset>
+
+            <button type="submit">Valider</button>
+          </form>
+
+        </section>
+        <footer>
+            <a href="https://www.ecologie.gouv.fr/energie">En savoir plus ?</a>       
+        </footer>
+    </body>
+</html>
