@@ -125,10 +125,10 @@ document.addEventListener("DOMContentLoaded", () => {
       bouton.addEventListener("click", () => {
         if (texte === question.intrus) {
           score++;
-          zoneResultat.textContent = "✅ Bravo, c'était l'intrus !";
+          zoneResultat.textContent = "Bravo, c'était l'intrus !";
           zoneResultat.style.color = "green";
         } else {
-          zoneResultat.textContent = `❌ Mauvaise réponse. C'était "${question.intrus}".`;
+          zoneResultat.textContent = `Mauvaise réponse. C'était "${question.intrus}".`;
           zoneResultat.style.color = "red";
         }
 
@@ -137,7 +137,7 @@ document.addEventListener("DOMContentLoaded", () => {
           if (indiceQuestion < questions.length) {
             afficherQuestion();
           } else {
-            zoneTexte.textContent = "🎉 Tu as terminé toutes les questions !";
+            zoneTexte.textContent = "Tu as terminé toutes les questions !";
             zoneBoutons.innerHTML = "";
             zoneResultat.textContent = "";
             zoneScore.textContent = `Ton score : ${score} / ${questions.length}`;
@@ -175,15 +175,64 @@ const messageDefi = document.getElementById("defi-message");
 if (boutonDefi && messageDefi) {
   boutonDefi.addEventListener("click", () => {
     const index = Math.floor(Math.random() * listeDefis.length);
-    messageDefi.textContent = "🌱 Défi du jour : " + listeDefis[index];
+    messageDefi.textContent = "Défi du jour : " + listeDefis[index];
     messageDefi.style.color = "#2e7d32";
     messageDefi.style.fontWeight = "bold";
   });
 }
 
+  // === Jeu tri écologique ===================================================
 
+const dechets = [
+  { nom: "Bouteille plastique", type: "poubelle-jaune" },
+  { nom: "Boîte de céréales", type: "poubelle-jaune" },
+  { nom: "Journal", type: "poubelle-bleue" },
+  { nom: "Feuille A4 imprimée ", type: "poubelle-bleue" },
+  { nom: "Mouchoir usagé ", type: "ordures" },
+  { nom: "Sachet plastique sale ", type: "ordures" },
+  { nom: "Carton de pizza (sale) ", type: "ordures" }
+];
 
+let dechetActuel = 0;
+let scoreTri = 0;
 
+const nomDechet = document.getElementById("nom-dechet");
+const resultatTri = document.getElementById("resultat-tri");
+const boutonsTri = document.querySelectorAll(".btn-tri");
+
+function afficherDechet() {
+  if (dechetActuel >= dechets.length) {
+    nomDechet.textContent = "Tu as fini de trier tous les déchets !";
+    resultatTri.textContent = `Score : ${scoreTri} / ${dechets.length}`;
+    resultatTri.style.color = "blue";
+    resultatTri.style.fontWeight = "bold";
+    return;
+  }
+
+  nomDechet.textContent = dechets[dechetActuel].nom;
+  resultatTri.textContent = "";
+}
+
+boutonsTri.forEach(bouton => {
+  bouton.addEventListener("click", () => {
+    const choix = bouton.getAttribute("data-type");
+    const correct = dechets[dechetActuel].type;
+
+    if (choix === correct) {
+      resultatTri.textContent = "Bien trié !";
+      resultatTri.style.color = "green";
+      scoreTri++;
+    } else {
+      resultatTri.textContent = `Mauvais tri. C'était : ${correct.replace('poubelle-', '')}`;
+      resultatTri.style.color = "red";
+    }
+
+    dechetActuel++;
+    setTimeout(afficherDechet, 1500);
+  });
+});
+
+afficherDechet();
 
 
 
