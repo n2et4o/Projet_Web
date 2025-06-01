@@ -4,8 +4,8 @@
         
         <title>Écovie Quiz </title> <!-- Titre de la page -->
         <meta charset="UTF-8"> <!-- Encodage UTF-8 -->
-        <link rel="stylesheet" href="../css/style.css">
         <script src="../js/script.js"></script>
+        <link rel="stylesheet" href="../css/style.css">
     </head><!-- Fin de la balise d'entête -->   
 
 
@@ -38,11 +38,38 @@
             </nav>
         
         </header>
+
+        <section class="energie-section">
+            <h2>Trouve l'intrus</h2>
+            <p id="intrus-question">Clique sur l'élément qui n'est pas une énergie renouvelable :</p>
+            <div id="intrus-options"> </div>
+            <p id="intrus-result"></p>
+            <p id="intrus-score"></p>
+
+        </section>
+
+        <section class="energie-section">
+            <h2>Défi écolo aléatoire </h2>
+            <button id="btn-defi">Me donner un défi</button>
+            <p id="defi-message"></p>
+        </section>
+
+        <section class="energie-section">
+            <h2>Jeu : Trie les déchets </h2>
+            <p id="dechet-a-trier">Clique sur la bonne poubelle :</p>
+            <h3 id="nom-dechet"></h3>
+            
+            <div id="choix-poubelles">
+                <button id="btn-jaune" class="btn-tri" data-type="poubelle-jaune"> Poubelle Jaune</button>
+                <button id="btn-bleue" class="btn-tri" data-type="poubelle-bleue"> Poubelle Bleue</button>
+                <button id="btn-ordure" class="btn-tri" data-type="ordures"> Ordures</button>
+            </div>
+            <p id="resultat-tri"></p>
+        </section>
+
         
-
-
         <footer>
-            <p>©️2025 Joss DOUNIAMA OKANA & Farida BEDEWY.</p>
+            <p>©2025 Joss DOUNIAMA OKANA & Farida BEDEWY.</p>
             <p>Tous droits réservés.</p>
             <a href="https://www.ecologie.gouv.fr/">En savoir plus ?</a>       
         </footer>
