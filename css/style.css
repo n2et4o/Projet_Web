@@ -265,6 +265,21 @@ section:hover {
     
 }
 
+.photo {
+  width: 150px;
+  height: 150px;  
+}
+
+.photo-joss {
+width: 150px;
+  height: 150px; 
+  margin-left: 70px; 
+}
+
+.farida {
+   margin-left: 130px; 
+}
+
 
 
 /* ================================ titre et logo ========================================== */
@@ -443,14 +458,6 @@ section:hover {
   display: none;
 }
 
-/* ============================ photo =================== */
-
-.photo {
-  width: 150px;
-  height: 150px;  
-}
-
-
 /* ============================ bouton du jeu trouve k'intru =================== */
 
 .intrus-btn {
@@ -504,7 +511,7 @@ section:hover {
   font-style: italic;
 }
 
-/*===========================================jeu tries==========================*/
+/*================================= jeu tries ==================================*/
 
 #choix-poubelles {
   display: flex;
