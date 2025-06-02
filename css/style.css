@@ -97,6 +97,9 @@ footer {
     border-left: 4px solid #43a047;
 }
 
+#slogan{
+    color: rgb(33, 149, 15);
+}
 /* Conteneur principal des post-its */
 #postit {
     display: flex;
@@ -489,26 +492,26 @@ section:hover {
 
 /* ============================ bouton du jeu défi écologique =================== */
 #btn-defi {
-  padding: 12px 24px;
-  background-color: #81c784;
-  color: white;
-  border: none;
-  border-radius: 10px;
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  margin-top: 10px;
+    padding: 12px 24px;
+    background-color: #81c784;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
 }
 
 #btn-defi:hover {
-  background-color: #66bb6a;
+    background-color: #66bb6a;
 }
 
-#defi-message {
-  margin-top: 15px;
-  font-size: 18px;
-  font-style: italic;
+#defi-message { 
+    margin-top: 15px;
+    font-size: 18px;
+    font-style: italic;
 }
 
 /*================================= jeu tries ==================================*/
